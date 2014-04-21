@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Examples of jQuery.tooltip</title>
+    <link rel="stylesheet" href="../src/jquery.tooltip.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="./jquery.findX.min.js" type="text/javascript"></script>
+    <script src="../src/jquery.tooltip.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            // enable tooltips in general
+            $.tooltip.on();
+
+            // toggle tooltips
+            $(document).on('click', '.tooltipped', function() {
+                if ($(this).is('[data-tooltip-disabled]')) {
+                    $(this).tooltipOn();
+                }
+                else {
+                    $(this).tooltipOff();
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            line-height: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .example {
+            padding: 200px 300px;
+            width: auto;
+        }
+        .example:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .tooltipped {
+            float: left;
+            height: 40px;
+            background: #eee;
+            width: 30%;
+            text-align: center;
+            margin: 1%;
+        }
+        .tooltipped:after {
+            content: attr(data-tooltip-position);
+        }
+        .noTooltip {
+            background: none;
+        }
+        p {
+            margin: 0;
+            padding: 4px 0;
+        }
+        .tooltip.bigPadding {
+            padding: 20px 30px;
+        }
+
+        .tooltip.red * {
+            color: red;
+        }
+        .right {
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="example">
+    <div class="tooltipped tooltipNw" title="Toolitp &lt;NW&gt; position." data-tooltip-position="nw"></div>
+    <div class="tooltipped tooltipN" title="Toolitp N position." data-tooltip-position="n" data-tooltip-class="bigPadding red"></div>
+    <div class="tooltipped tooltipNe" title="Toolitp NE position." data-tooltip-position="ne"></div>
+    <div class="tooltipped tooltipW" title="Toolitp W position." data-tooltip-position="w"></div>
+    <div class="tooltipped noTooltip"></div>
+    <div class="tooltipped tooltipE" data-tooltip-title="Toolitp E position." data-tooltip-position="e"></div>
+    <div class="tooltipped tooltipSw" data-tooltip-title="Toolitp SW position." data-tooltip-position="sw"></div>
+    <div class="tooltipped tooltipS" data-tooltip-title="Toolitp S position." data-tooltip-position="s"></div>
+    <div class="tooltipped tooltipSe" data-tooltip-title="Toolitp SE position." data-tooltip-position="se"></div>
+</div>
+
+
+<div class="example">
+    <div class="tooltipped tooltipNw" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="nw"></div>
+    <div class="tooltipped tooltipN" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="n" data-tooltip-class="bigPadding red"></div>
+    <div class="tooltipped tooltipNe" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="ne"></div>
+    <div class="tooltipped tooltipW" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="w"></div>
+    <div class="tooltipped noTooltip"></div>
+    <div class="tooltipped tooltipE" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="e"></div>
+    <div class="tooltipped tooltipSw" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="sw"></div>
+    <div class="tooltipped tooltipS" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="s"></div>
+    <div class="tooltipped tooltipSe" data-tooltip="< + .theHtmlTooltip" data-tooltip-position="se"></div>
+</div>
+
+<div class="tooltipData theHtmlTooltip">
+    <table>
+        <tr>
+            <th>Some data</th>
+            <td class="right">4711</td>
+        </tr>
+        <tr>
+            <th>More data</th>
+            <td class="right">42</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

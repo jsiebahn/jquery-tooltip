@@ -1,0 +1,124 @@
+/** @license jQuery tooltip Plugin v0.1.0 Copyright 2014 J. Siebahn, Released under the MIT license
+ *  https://github.com/jsiebahn/jquery-tooltip
+ */
+/**
+ * A jQuery plugin to create styled tooltips with less impact.
+ *
+ * These are the default styles of jQuery tooltip.
+ */
+
+/**
+ * The tooltip will be positioned absolutely. Left, top, right and bottom will be set by JavaScript.
+ */
+.tooltip {
+    position: absolute;
+    z-index: 10000;
+    margin: 10px;
+    padding: 0 5px;
+    background: rgba(10,10,10,0.75);
+    border-radius: 2px;
+}
+
+/**
+ * Special positioning for the diagonal arrow of the positions nw, ne, sw and se.
+ */
+.tooltip.ne,
+.tooltip.se {
+    margin-left: -30px;
+}
+.tooltip.nw,
+.tooltip.sw {
+    margin-right: -30px;
+}
+.tooltip.ne,
+.tooltip.nw {
+    margin-bottom: 15px;
+}
+.tooltip.se,
+.tooltip.sw {
+    margin-top: 15px;
+}
+
+/**
+ * Style of the arrows pointing to the tooltipped element.
+ */
+.tooltip.se:after,
+.tooltip.sw:after,
+.tooltip.ne:after,
+.tooltip.nw:after {
+    content: '';
+    position: absolute;
+    border-width: 5px 5px;
+    border-style: solid;
+}
+.tooltip.se:after {
+    top: -10px;
+    left: 9px;
+    border-color: transparent transparent rgba(10,10,10,0.75) rgba(10,10,10,0.75);
+}
+.tooltip.sw:after {
+    top: -10px;
+    right: 9px;
+    border-color: transparent rgba(10,10,10,0.75) rgba(10,10,10,0.75) transparent;
+}
+.tooltip.ne:after {
+    bottom: -10px;
+    left: 9px;
+    border-color: rgba(10,10,10,0.75) transparent transparent rgba(10,10,10,0.75);
+}
+.tooltip.nw:after {
+    bottom: -10px;
+    right: 9px;
+    border-color: rgba(10,10,10,0.75) rgba(10,10,10,0.75) transparent transparent;
+}
+.tooltip.n:after,
+.tooltip.w:after,
+.tooltip.s:after,
+.tooltip.e:after {
+    content: '';
+    position: absolute;
+    border-width: 7px 7px;
+    border-style: solid;
+}
+.tooltip.n:after {
+    bottom: -14px;
+    left: 50%;
+    margin-left: -7px;
+    border-color: rgba(10,10,10,0.75) transparent transparent transparent;
+}
+.tooltip.s:after {
+    top: -14px;
+    left: 50%;
+    margin-left: -7px;
+    border-color: transparent transparent rgba(10,10,10,0.75) transparent;
+}
+.tooltip.e:after {
+    top: 50%;
+    left: -14px;
+    margin-top: -7px;
+    border-color: transparent rgba(10,10,10,0.75) transparent transparent;
+}
+.tooltip.w:after {
+    top: 50%;
+    right: -14px;
+    margin-top: -7px;
+    border-color: transparent transparent transparent rgba(10,10,10,0.75);
+}
+
+/**
+ * Changing the text color of the tooltip content to have contrast to the background.
+ */
+.tooltipContent {
+    color: rgba(255,255,255,1);
+}
+
+/**
+ * .tooltipData may be used to define tooltip content markup for more complex tooltips.
+ * It will not be shown in the html but is visible when moved to the tooltip.
+ */
+.tooltipData {
+    display: none;
+}
+.tooltip .tooltipData {
+    display: block;
+}
