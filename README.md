@@ -51,7 +51,7 @@ selectors from the document are used with the default ```jQuery('selector')```.
 License
 -------
 
-jQuery.tooltip is released under the terms of the [MIT License](MIT-LICENSE).
+jQuery.tooltip is released under the terms of the [MIT License](LICENSE).
 
 
 Authors
