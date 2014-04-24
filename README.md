@@ -3,7 +3,7 @@ jQuery.tooltip
 
 A jQuery plugin to create styled tooltips with less coding.
 
-Visit [jQuery.findX on Github](https://github.com/jsiebahn/jquery-tooltip) for sources and examples.
+Visit [jQuery.tooltip on Github](https://github.com/jsiebahn/jquery-tooltip) for sources and examples.
 
 
 Start with jQuery tooltip
