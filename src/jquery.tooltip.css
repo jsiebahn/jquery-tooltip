@@ -15,6 +15,7 @@
     z-index: 10000;
     margin: 10px;
     padding: 0 5px;
+	background: #444; /* for ie8 */
     background: rgba(10,10,10,0.75);
     border-radius: 2px;
 }
@@ -50,25 +51,30 @@
     position: absolute;
     border-width: 5px 5px;
     border-style: solid;
+	background: none;
 }
 .tooltip.se:after {
     top: -10px;
     left: 9px;
+    border-color: transparent transparent #444 #444; /* for ie8 */
     border-color: transparent transparent rgba(10,10,10,0.75) rgba(10,10,10,0.75);
 }
 .tooltip.sw:after {
     top: -10px;
     right: 9px;
+    border-color: transparent #444 #444 transparent; /* for ie8 */
     border-color: transparent rgba(10,10,10,0.75) rgba(10,10,10,0.75) transparent;
 }
 .tooltip.ne:after {
     bottom: -10px;
     left: 9px;
+    border-color: #444 transparent transparent #444; /* for ie8 */
     border-color: rgba(10,10,10,0.75) transparent transparent rgba(10,10,10,0.75);
 }
 .tooltip.nw:after {
     bottom: -10px;
     right: 9px;
+    border-color: #444 #444 transparent transparent; /* for ie8 */
     border-color: rgba(10,10,10,0.75) rgba(10,10,10,0.75) transparent transparent;
 }
 .tooltip.n:after,
@@ -79,29 +85,34 @@
     position: absolute;
     border-width: 7px 7px;
     border-style: solid;
+	background: none;
 }
 .tooltip.n:after {
     bottom: -14px;
     left: 50%;
     margin-left: -7px;
+    border-color: #444 transparent transparent transparent; /* for ie8 */
     border-color: rgba(10,10,10,0.75) transparent transparent transparent;
 }
 .tooltip.s:after {
     top: -14px;
     left: 50%;
     margin-left: -7px;
+    border-color: transparent transparent #444 transparent; /* for ie8 */
     border-color: transparent transparent rgba(10,10,10,0.75) transparent;
 }
 .tooltip.e:after {
     top: 50%;
     left: -14px;
     margin-top: -7px;
+    border-color: transparent #444 transparent transparent; /* for ie8 */
     border-color: transparent rgba(10,10,10,0.75) transparent transparent;
 }
 .tooltip.w:after {
     top: 50%;
     right: -14px;
     margin-top: -7px;
+    border-color: transparent transparent transparent #444; /* for ie8 */
     border-color: transparent transparent transparent rgba(10,10,10,0.75);
 }
 
@@ -109,7 +120,7 @@
  * Changing the text color of the tooltip content to have contrast to the background.
  */
 .tooltipContent {
-    color: rgba(255,255,255,1);
+    color: #fff;
 }
 
 /**
