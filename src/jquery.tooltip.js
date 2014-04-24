@@ -117,7 +117,7 @@
              * Optional attribute with additional css classes that should be added to the outer
              * node of the tooltip template while the tooltip is shown.
              */
-             tooltipCssClasses: 'data-tooltip-class'
+            tooltipCssClasses : 'data-tooltip-class'
         }
 
     };
@@ -230,10 +230,10 @@
         else if (position[0] == 's') {
             tooltipBox.css({top: offset.top + height});
         }
-        if (position.match(/e/)){
+        if (position.match(/e/)) {
             tooltipBox.css({left: offset.left + width});
         }
-        else if (position.match(/w/)){
+        else if (position.match(/w/)) {
             tooltipBox.css({right: viewPortWidth - offset.left});
         }
         else {
@@ -286,7 +286,7 @@
      */
     var showTooltip = function(settings, element, tooltipMarkup) {
         $.each(settings.attributes.tooltipText, function(index, attribute) {
-            element.data(DATA_STORE_PREFIX+attribute, element.attr(attribute));
+            element.data(DATA_STORE_PREFIX + attribute, element.attr(attribute));
             element.removeAttr(attribute);
         });
         if (tooltipBox == null) {
@@ -353,23 +353,21 @@
     /**
      * Helper function to extend the global settings.
      */
-    var extendSettingsFromFirstArgument = function() {
-        if (arguments && arguments[0]) {
-            globalSettings = $.extend(globalSettings, arguments[0]);
-        }
+    var extendSettings = function(options) {
+        globalSettings = $.extend(globalSettings, options);
     };
 
     /**
      * Updates the settings with the first given argument. Preserves the current enabled state of
      * the tooltip.
      */
-    $.tooltip = function() {
+    $.tooltip = function(options) {
         var doEnable = false;
         if (tooltipEnabled) {
             doEnable = true;
             disableTooltip(globalSettings);
         }
-        extendSettingsFromFirstArgument.call(this, arguments);
+        extendSettings(options || {});
         if (doEnable) {
             enableTooltip(globalSettings);
         }
@@ -379,11 +377,11 @@
      * Updates the settings with the first given argument and enables the tooltip with these
      * settings.
      */
-    $.tooltip.on = function() {
+    $.tooltip.on = function(options) {
         if (tooltipEnabled) {
             disableTooltip(globalSettings);
         }
-        extendSettingsFromFirstArgument.call(this, arguments);
+        extendSettings(options || {});
         enableTooltip(globalSettings);
     };
 
@@ -391,18 +389,18 @@
      * Disables all tooltips. Updates the settings with the first given argument for the next
      * enable of the tooltips.
      */
-    $.tooltip.off = function() {
+    $.tooltip.off = function(options) {
         if (tooltipEnabled) {
             disableTooltip(globalSettings);
         }
-        extendSettingsFromFirstArgument.call(this, arguments);
+        extendSettings(options || {});
     };
 
     /**
      * Delegates to $.tooltip.
      */
-    $.fn.tooltip = function() {
-        $.tooltip.call(this, arguments);
+    $.fn.tooltip = function(options) {
+        $.tooltip(options || {});
     };
 
     /**
