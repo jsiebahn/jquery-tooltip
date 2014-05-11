@@ -422,7 +422,6 @@
         this.each(function() {
             var element = $(this);
             element.removeAttr(globalSettings.attributes.disabled);
-            element.trigger(EVENT);
         });
         return this;
     };
