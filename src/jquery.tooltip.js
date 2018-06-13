@@ -344,7 +344,6 @@
             }
             e.stopImmediatePropagation();
             e.stopPropagation();
-            e.preventDefault();
             showTooltip(settings, element, tooltipMarkup);
         });
         tooltipEnabled = true;
